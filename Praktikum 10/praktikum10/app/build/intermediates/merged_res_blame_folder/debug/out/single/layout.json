@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\MY MSI\\AndroidStudioProjects\\praktikum10\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_quote.xml",
+        "source": "C:\\Users\\MY MSI\\AndroidStudioProjects\\praktikum10\\app\\src\\main\\res\\layout\\item_quote.xml"
+    },
+    {
+        "merged": "C:\\Users\\MY MSI\\AndroidStudioProjects\\praktikum10\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_quote_add_update.xml",
+        "source": "C:\\Users\\MY MSI\\AndroidStudioProjects\\praktikum10\\app\\src\\main\\res\\layout\\activity_quote_add_update.xml"
+    },
+    {
+        "merged": "C:\\Users\\MY MSI\\AndroidStudioProjects\\praktikum10\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\MY MSI\\AndroidStudioProjects\\praktikum10\\app\\src\\main\\res\\layout\\activity_main.xml"
+    }
+]
