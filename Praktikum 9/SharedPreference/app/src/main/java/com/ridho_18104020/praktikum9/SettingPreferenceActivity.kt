@@ -11,9 +11,11 @@ import com.ridho_18104020.praktikum9.databinding.ActivitySettingPreferenceBindin
 import com.ridho_18104020.praktikum9.preference.SettingPreference
 
 class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
+
     private lateinit var mSettingPreference: SettingPreference
     private lateinit var settingModel: SettingModel
     private lateinit var binding: ActivitySettingPreferenceBinding
+
     companion object {
         const val RESULT_CODE = 101
     }
@@ -36,7 +38,9 @@ class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
             val name = binding.edtName.text.toString().trim()
             val email = binding.edtEmail.text.toString().trim()
             val age = binding.edtAge.text.toString().trim()
+            val alamat = binding.edtAlamat.text.toString().trim()
             val phoneNo = binding.edtPhone.text.toString().trim()
+            val kampus = binding.edtKampus.text.toString().trim()
             val isLoveMU = binding.rgLoveMu.checkedRadioButtonId == R.id.rb_yes
             if (name.isEmpty()) {
                 binding.edtName.error = getString(R.string.field_required)
@@ -54,6 +58,10 @@ class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
                 binding.edtAge.error = getString(R.string.field_required)
                 return
             }
+            if (alamat.isEmpty()) {
+                binding.edtAlamat.error = getString(R.string.field_required)
+                return
+            }
             if (phoneNo.isEmpty()) {
                 binding.edtPhone.error = getString(R.string.field_required)
                 return
@@ -62,13 +70,15 @@ class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
                 binding.edtPhone.error = getString(R.string.field_digit_only)
                 return
             }
-            saveSetting(name, email, age, phoneNo, isLoveMU)
+            if (kampus.isEmpty()) {
+                binding.edtKampus.error = getString(R.string.field_required)
+                return
+            }
+            saveSetting(name, email, age, phoneNo, alamat, kampus,isLoveMU)
             val resultIntent = Intent()
             setResult(RESULT_CODE, resultIntent)
             finish()
         }
-
-
     }
 
     private fun isValidEmail(email: CharSequence): Boolean {
@@ -79,7 +89,9 @@ class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
         binding.edtName.setText(settingModel.name)
         binding.edtEmail.setText(settingModel.email)
         binding.edtAge.setText(settingModel.age.toString())
+        binding.edtAlamat.setText(settingModel.alamat)
         binding.edtPhone.setText(settingModel.phoneNumber)
+        binding.edtKampus.setText(settingModel.kampus)
         if (settingModel.isDarkTheme) {
             binding.rbYes.isChecked = true
         } else {
@@ -87,16 +99,16 @@ class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun saveSetting(name: String, email: String, age: String, phoneNo: String, isDark: Boolean) {
+    private fun saveSetting(name: String, email: String, age: String, phoneNo: String, alamat: String, kampus: String, isDark: Boolean) {
         val settingPreference = SettingPreference(this)
         settingModel.name = name
         settingModel.email = email
         settingModel.age = Integer.parseInt(age)
         settingModel.phoneNumber = phoneNo
+        settingModel.alamat = alamat
+        settingModel.kampus = kampus
         settingModel.isDarkTheme = isDark
         settingPreference.setSetting(settingModel)
         Toast.makeText(this, "Data tersimpan", Toast.LENGTH_SHORT).show()
     }
-
-
 }

@@ -1,0 +1,10 @@
+com/ridho_18104020/praktikum10/databinding/ItemQuoteBinding.java
+ com.ridho_18104020.praktikum10.databinding.ItemQuoteBinding
+com/ridho_18104020/praktikum10/DataBindingTriggerClass.java
+ com.ridho_18104020.praktikum10.DataBindingTriggerClass
+com/ridho_18104020/praktikum10/databinding/ActivityQuoteAddUpdateBinding.java
+ com.ridho_18104020.praktikum10.databinding.ActivityQuoteAddUpdateBinding
+com/ridho_18104020/praktikum10/BuildConfig.java
+ com.ridho_18104020.praktikum10.BuildConfig
+com/ridho_18104020/praktikum10/databinding/ActivityMainBinding.java
+ com.ridho_18104020.praktikum10.databinding.ActivityMainBinding

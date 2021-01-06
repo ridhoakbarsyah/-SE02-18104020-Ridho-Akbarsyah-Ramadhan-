@@ -3,6 +3,8 @@ package com.ridho_18104020.praktikum9
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatDelegate
 import com.ridho_18104020.praktikum9.data.SettingModel
 import com.ridho_18104020.praktikum9.databinding.ActivityMainBinding
@@ -11,6 +13,19 @@ import com.ridho_18104020.praktikum9.preference.SettingPreference
 class MainActivity : AppCompatActivity() {
     companion object {
         private const val REQUEST_CODE = 100
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.Setting->{ openSetting()
+            }
+        }
+        return true
     }
 
     private lateinit var settingModel: SettingModel
